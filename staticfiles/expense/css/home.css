@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mini-container {
+    width: 200px; /* Или другое подходящее значение */
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.mini-page {
+    width: 100%;
+    height: 200px; /* Или другое подходящее значение */
+    border: none;
+}
+
+.btn {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,9 @@
+.content-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 100vh; 
+}
+.arial-text {
+        font-family: Arial, sans-serif;
+}

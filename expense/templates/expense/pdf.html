@@ -1,0 +1,146 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+<style>
+.box {
+  background-image: url("https://wallpaperaccess.com/full/1549170.png");
+  background-size:cover;
+  background-position:center center;
+  height:100vh;
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:-1;
+ 
+}
+  .container  {
+    
+            max-width: 900px;
+            margin: 30px auto;
+            
+        }
+
+        .expense-container {
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+
+        .expense-header {
+            text-align: center;
+        }
+
+        .expense-title {
+            font-size: 24px;
+            color: #000; 
+            margin-top: 20px;
+        }
+
+        .expense-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .expense-table th,
+        .expense-table td {
+            border: 1px solid #9f1c1c;
+            padding: 12px;
+            text-align: left;
+            color: #000; 
+        }
+
+        .expense-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            margin-top: 20px;
+        }
+
+        .expense-footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #2b50b7;
+        }
+
+        .btn-print {
+            margin-left: 48%;
+            margin-top: 2%;
+        }
+
+        img.expense-img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        #date {
+            margin-left: 120px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #077bf8; 
+            color: #000000;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: black ; 
+        }
+        
+  
+</style>
+<div class="box">
+</div>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Your Financial Summary</h2>
+
+    <form method="GET" action="">
+        <label for="start_date">Start Date:</label>
+        <input type="date" id="start_date" name="start_date" value="{{ start_date }}">
+
+        <label for="end_date">End Date:</label>
+        <input type="date" id="end_date" name="end_date" value="{{ end_date }}">
+
+        <button type="submit" class="btn btn-primary">Apply Filter</button>
+    </form>
+
+    <hr>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Expense Reason</th>
+                <th>Income</th>
+                <th>Expenses</th>
+                <th>Total</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for expense in expenses %}
+            <tr>
+                <td>{{ expense.name }}</td>
+                <td>{{ expense.income }}</td>
+                <td>{{ expense.expenses }}</td>
+                <td>{{ expense.total }}</td>
+                <td>{{ expense.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p>Total Income: {{ total_sum }}</p>
+    <p>Total Expenses: {{ total_expenses }}</p>
+    <p>Remaining Finance: {{ remaining_finance }}</p>
+
+    <a href="{% url 'financial_statistics' %}" class="btn btn-secondary">View Financial Statistics</a>
+    <a href="{% url 'expenses' %}" class="btn btn-secondary">Back</a>
+</div>
+{% endblock %}

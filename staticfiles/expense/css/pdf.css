@@ -1,0 +1,82 @@
+
+
+        .container {
+            max-width: 700px;
+            margin: 30px auto;
+        }
+
+        .expense-container {
+            padding: 20px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #fff;
+            margin-top: 30px;
+        }
+
+        .expense-header {
+            text-align: center;
+        }
+
+        .expense-title {
+            font-size: 24px;
+            color: #000;
+            margin-top: 20px;
+        }
+
+        .expense-table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        .expense-table th,
+        .expense-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+            color: #000; 
+        }
+
+        .expense-total {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000; 
+            margin-top: 20px;
+        }
+
+        .expense-footer {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #555;
+        }
+
+        .btn-print {
+            margin-left: 48%;
+            margin-top: 2%;
+        }
+
+        img.expense-img {
+            max-width: 50%;
+            height: auto;
+        }
+
+        #date {
+            margin-left: 120px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            border: 2px solid #007bff; 
+            color: #007bff; 
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #007bff; 
+            color: #fff; 
+        }
+        

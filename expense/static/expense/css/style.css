@@ -1,0 +1,265 @@
+body1 {
+        background: linear-gradient(to bottom, #4b6cb7, #182848); 
+        font-family: 'Times New Roman', Times, serif;
+        color: #fff; 
+        margin: 0;
+        padding: 0;
+        height: 100vh; 
+    }
+
+    .register-text {
+        color: black; 
+    }
+.welcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+.picture {
+    flex: 1; 
+    padding: 20px; 
+}
+
+.wel {
+    flex: 1; 
+    padding: 20px; 
+    max-width: 400px; 
+}
+
+.register-link {
+    margin-top: 10px; 
+    align-items: center;
+}
+
+.input-wrapper {
+    margin-bottom: 10px; 
+}
+
+.form-label {
+    display: block; 
+    margin-bottom: 5px; 
+}
+
+.form-input {
+    width: 100%;
+}
+.btn {
+    width: 200px; 
+    margin-top: 10px; 
+}
+.container {
+		padding: 40px;
+	}
+
+	.login-heading {
+		color: #000; 
+	}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color: #ff5e14;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background: #ff5e14;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color: #ff5e14;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background: #ff5e14;
+    padding: 13px 20px;
+    border: 1px solid #ff5e14;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color: #ff5e14;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color: #ff5e14;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+.nefor{
+  margin-top: 40px;
+}
+    .primary {
+            background-color: #007bff;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            
+        }
+
+        .danger {
+            background-color: #dc3545; /* Red danger button */
+            transition: all 0.3s ease;
+            text-decoration: none;
+            
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333; /* Darker red on hover */
+            
+        }
+        .ok{
+            color:white;
+            text-decoration:none;
+        }
+    .product{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+.second{
+    display: block;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.overview{
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: auto;
+  margin-right: auto;  
+}
+.welcome{
+    display: flex;
+    justify-content: space-around;
+}
+.wel {
+    height=100%;
+}

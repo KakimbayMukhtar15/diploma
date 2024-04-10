@@ -1,0 +1,97 @@
+{% extends 'main/header.html' %}
+{% load static %}
+{% block title %}<title>Financial Tracker Home</title>{% endblock %}
+
+{% block css %}
+
+    <style>
+        body {
+            height:100vh;
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-image: url("https://img2.goodfon.com/original/2048x1197/0/d8/tekstura-material-linii-belyy-2809.jpg");
+        }
+
+        .container1 {
+            margin:100px;
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .mini-container {
+            width: 250px;
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .mini-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .mini-description {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        .mini-page {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: none;
+        }
+
+        .btn {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+<section class="container1">
+    <div class="mini-container">
+        <h2 class="mini-title">Finance</h2>
+        <p class="mini-description">We can control our finances here</p>
+        <img src="{% static 'expense/img/finance.webp' %}" alt="Percentage Image" class="mini-page">
+        <a href="{% url 'pdf' %}" class="btn">View Full Page</a>
+    </div>
+
+    <div class="mini-container">
+        <h2 class="mini-title">Statistics</h2>
+        <p class="mini-description">View  statistics</p>
+        <img src="{% static 'expense/img/precent.png' %}" alt="Percentage Image" class="mini-page">
+        <a href="{% url 'financial_statistics' %}" class="btn">View Full Page</a>
+    </div>
+
+    <div class="mini-container">
+        <h2 class="mini-title">Diagram</h2>
+        <p class="mini-description">Add something here</p>
+        <img src="{% static 'expense/img/statistics.png' %}" alt="Statistics Image" class="mini-page">
+        <a href="{% url 'diagrams' %}" class="btn">View Full Page</a>
+    </div>
+
+    <div class="mini-container">
+        <h2 class="mini-title">Goals </h2>
+        <p class="mini-description">Set financial improvement goals</p>
+        <img src="{% static 'expense/img/goals.png' %}" alt="Goals Image" class="mini-page">
+        <a href="{% url 'goals' %}" class="btn">View Full Page</a>
+    </div>
+</section>
+{% endblock %}

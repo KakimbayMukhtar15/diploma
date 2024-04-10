@@ -1,0 +1,89 @@
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'expense/css/goals.css' %}">
+{% endblock %}
+
+{% block content %}
+<style>
+    .body{
+        position: fixed;
+    }
+    .box {
+      background-image: url("https://img2.goodfon.com/original/2048x1197/0/d8/tekstura-material-linii-belyy-2809.jpg");
+      background-size:cover;
+      background-position:center center;
+      height:120vh;
+      position:fixed;
+      left:0;
+      right:0;
+      z-index:-1;
+      margin: -25px;
+     
+    }
+    
+    </style>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Goal</title>
+ 
+</head>
+<body>
+    <div class="box">
+    </div>
+    <h1>Create New Goal</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="target_amount">Target Amount:</label>
+        <input type="number" id="target_amount" name="target_amount" required>
+        <label for="current_amount">Current Amount:</label>
+        <input type="number" id="current_amount" name="current_amount" required>
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        <button type="submit">Create Goal</button>
+    </form>
+
+    <h1>Existing Goals</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Target Amount</th>
+                <th>Current Amount</th>
+                <th>Deadline</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for goal in savings_goals %}
+            <tr>
+                <td>{{ goal.name }}</td>
+                <td>{{ goal.target_amount }}</td>
+                <td>{{ goal.current_amount }}</td>
+                <td>{{ goal.deadline }}</td>
+                <td>
+                    <form action="{% url 'goals' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="delete_goal" value="{{ goal.id }}">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>  
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No savings goals found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'expenses' %}" class="btn btn-primary">Back</a>
+
+</html>
+{% endblock %}

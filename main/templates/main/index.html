@@ -1,0 +1,112 @@
+{% extends 'main/header.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'main/css/overview.css' %}">
+{% endblock %}
+{% block content %}
+<style>
+    .box {
+        background-image: url("https://wallpaperaccess.com/full/1549170.png");
+        background-size:cover;
+        background-position:center center;
+        height:100vh;
+        position:fixed;
+        left:0;
+        right:0;
+        z-index:-1;
+        margin: -17px;
+       
+      }
+      
+      </style>
+<div class="box">
+</div>
+    <section class="px-5">
+        <div>
+
+        </div>
+        <div class="row mb-5 mt-2">
+            <div class="col-lg-7 col-sm-12 align-self-center container-fluid d-flex mx-auto">
+            </div>
+        
+            <div class="col-lg-5 col-sm-12 mt-3" style="background-color: rgb(245, 245, 245);">
+                <div>
+                    <h3 class="text-center mt-4 mb-4">Income</h3>
+                    <div class="row px-4">
+                        <div class="col-lg-5 col-sm-12 text-end text-center fw-normal">
+                            <h5>Income:</h5>
+                        </div>
+                        <div class="col-lg-7 col-sm-12 mb-4">
+                            <input id="total-income" type="text" class="form-control"
+                                aria-label="Amount (to the nearest dollar)">
+                            <p id="balance-error-msg" style="color: red;">*please enter a valid number</p>
+                        </div>
+                        <h3 class="text-center mb-4">Expenses</h3>
+                    </div>
+                    <div class="row px-4 mb-4">
+                        <div class="col-lg-5 col-sm-12 text-end text-center fw-normal">
+                            <h5>Food:</h5>
+                        </div>
+                        <div class="col-lg-7 col-sm-12">
+                            <input id="food-expense" type="text" class="form-control"
+                                aria-label="Amount (to the nearest dollar)">
+                        </div>
+                    </div>
+                    <div class="row px-4 mb-4">
+                        <div class="col-lg-5 col-sm-12 text-end text-center fw-normal">
+                            <h5>Rent:</h5>
+                        </div>
+                        <div class="col-lg-7 col-sm-12">
+                            <input id="rent-expense" type="text" class="form-control"
+                                aria-label="Amount (to the nearest dollar)">
+                        </div>
+                    </div>
+                    <div class="row px-4 mb-4">
+                        <div class="col-lg-5 col-sm-12 text-end text-center fw-normal">
+                            <h5>Clothes:</h5>
+                        </div>
+                        <div class="col-lg-7 col-sm-12">
+                            <input id="clothes-expense" type="text" class="form-control"
+                                aria-label="Amount (to the nearest dollar)">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="calculate-btn" type="button" class="btn text-white mb-4"
+                            style="background-color: rgb(92, 92, 92);">Calculate</button>
+                    </div>
+                    <div>
+                        <h5 class="text-center">Total Expenses: <span id="expenses-amount"> 00 </span>TK</h5>
+                        <h5 class="text-center">Balance: <span id="balance-amount"> 00 </span>Tk</h5>
+
+                    </div>
+                    <div class="row px-4 mb-3 mt-4">
+                        <div class="col-lg-4 text-lg-end text-center fw-normal">
+                            <h5>Save:</h5>
+                        </div>
+                        <div class="col-lg-4">
+                            <input id="saving-percentage" type="text" class="form-control"
+                                aria-label="Amount (to the nearest dollar)">
+
+                        </div>
+                        <div class="col-lg-1 mt-1 text-center">
+                            <span class="mt-3 ">%</span>
+                        </div>
+                        <div class="col-lg-3 d-flex justify-content-center">
+                            <button id="saving-btn" type="button" class="btn text-white px-4 mb-4"
+                                style="background-color: rgb(92, 92, 92);">Save</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p id="saving-balance-error-msg" class="text-center" style="color: red;">*Sorry, the balance is
+                            not enough for saving</p>
+                        <h5 class="text-center">Saving Amount: <span id="saving-amount">00 </span>TK</h5>
+                        <h5 class="text-center mb-4">Remaining Balance: <span id="remaining-amount">00 </span>TK</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- js cdn -->
+    <script src="{% static 'main/js/app.js' %}"></script>
+
+{% endblock %}

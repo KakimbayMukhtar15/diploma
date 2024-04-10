@@ -1,0 +1,191 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	overflow-x: hidden;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Arimo');
+.top-menu {
+  background: rgba(255,255,255,.5);
+  box-shadow: 3px 0 7px rgba(0,0,0,.3);
+  padding: 0px;
+}
+.top-menu:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.navbar-logo {
+    position: relative;
+    display: inline-block;
+    top: 5px;
+    left: 100px;}
+.menu-main {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+.menu-main li {display: inline-block;}
+.menu-main a {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  line-height: 71px;
+  padding-left: 25px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-family: 'Arimo', sans-serif;
+  font-weight: bold;
+  color: #000000;
+  transition:.3s linear;
+  left: -700px;
+}
+
+
+.box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin:  auto 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .box-inner img {
+    transition: all 0.4s ease-in-out;
+    width: 100%;
+    height: 500px;
+    z-index: -1;
+  }
+  .box:hover img {
+    transform: scale(1.1);
+  }
+
+
+
+
+  .txt h2{
+    position: relative;
+    top: -380px;
+    left: 280px;
+    font-size: 47px;
+    word-spacing: 10px;
+    font-family:  'Montserrat', sans-serif;
+    color: white;
+   }
+
+   .txt h3{
+   	position: relative;
+   	color: white;
+   	top: -350px;
+   	left: 350px;
+   	text-align: center;
+   	width: 800px;
+   }
+   .txt button{
+   	position: relative;
+   	background:none;
+   	top: -300px;
+   	left: 670px;
+   	color: white;
+   	 width: 150px;
+     height: 40px;
+     border-color: white;
+     cursor: pointer;
+
+   }
+   .text1{
+    font-family:  'Montserrat', sans-serif;
+      position: relative;
+      top: -20px;
+      margin: 0px;
+      margin-left: -10px;
+      color: rgb(0, 0, 0);
+      font-size: 60px;
+      text-align: center;
+      left: 0px;
+      word-spacing: 10px;
+      font-weight: 400;
+      letter-spacing: 3px;
+
+  }
+  .text2{
+      font-family:  'Montserrat', sans-serif;
+      position: relative;
+      top: 20px;
+      margin: 0px;
+      color: rgb(0, 0, 0);
+      font-size: 18px;
+      text-align: left;
+      width: 1000px;
+      text-align: center;
+      float: center;
+      left: 260px;
+      word-spacing: 3px;
+
+  }
+.image {
+ overflow:hidden;
+ position: relative;
+ left: 50px;
+ 
+ width: 650px;
+ height:350;
+ margin: 50px 0px 40px 30px;
+ 
+
+ }
+
+.image img {
+ width: 650px;
+ height: 350px;
+ }
+ 
+
+.image {
+ 
+float:left;
+}
+.text3{
+	font-family:  'Montserrat', sans-serif;
+	position: relative;
+	top:125px;
+	left: 430px;
+	width: 700px;
+	font-size: 43px;
+}
+
+
+
+
+.image h3,h6,h5{
+  margin-top: 15px;
+}
+
+ 
+.imagecars{
+	overflow:hidden;
+	width: 400px;
+	position: relative;
+	top: 300px;
+	left: 140px;
+	margin-right: 7px;
+}
+.imagecars img {
+ width: 400px;
+ height: 250px;
+ 
+ }
+ 
+.imagecars {
+ 
+float:left;
+}
+
+
+
+
+
