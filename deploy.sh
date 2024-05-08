@@ -4,13 +4,13 @@ echo "deleting old app"
 sudo rm -rf /var/www/
 
 echo "creating app folder"
-sudo mkdir -p /var/www/project
+sudo mkdir -p /var/www/diploma
 
 echo "moving files to app folder"
-sudo mv  * /var/www/project
+sudo mv  * /var/www/diploma
 
 # Navigate to the app directory
-cd /var/www/project/
+cd /var/www/diploma/
 sudo mv env .env
 
 sudo apt-get update
@@ -63,11 +63,11 @@ fi
 # Stop any existing Gunicorn process
 sudo pkill gunicorn
 sudo rm -rf myapp.sock
-sudo rm -f /var/www/project/myapp.sock
+sudo rm -f /var/www/diploma/myapp.sock
 
 # # Start Gunicorn with the Django application
 # # gunicorn --workers 3 --bind 0.0.0.0:8000 server:app &
 echo "starting gunicorn"
-sudo gunicorn --workers 3 --bind unix:/var/www/sdu_dorm/myapp.sock diploma.wsgi:application --daemon
+sudo gunicorn --workers 3 --bind unix:/var/www/diploma/myapp.sock diploma.wsgi:application --daemon
 
 echo "Deployment is completed 🚀"
