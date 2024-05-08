@@ -19,7 +19,7 @@ SECRET_KEY = 'django-insecure-b4-pc3esnl)+myb5+73!v0r6(e+q#s^g&15%x0f85kb_1%-v-y
 
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'crispy_bootstrap4',
@@ -89,6 +89,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
 
 LANGUAGE_CODE = 'en-us'
 
