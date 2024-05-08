@@ -25,7 +25,6 @@ sudo pip3 install -r requirements.txt
 echo "Applying database migrations..."
 sudo python3 manage.py migrate
 
-
 # Collect static files
 echo "Collecting static files..."
 sudo python3 manage.py collectstatic --noinput
