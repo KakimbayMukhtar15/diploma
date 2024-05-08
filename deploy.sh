@@ -20,6 +20,7 @@ sudo apt-get install -y python3 python3-pip
 # Install application dependencies from requirements.txt
 echo "Install application dependencies from requirements.txt"
 sudo pip install -r requirements.txt
+sudo pip3 install -r requirements.txt
 
 echo "Applying database migrations..."
 sudo python3 manage.py migrate
