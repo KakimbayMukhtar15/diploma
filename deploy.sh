@@ -13,9 +13,6 @@ sudo mv  * /var/www/diploma
 cd /var/www/diploma/
 sudo mv env .env
 
-sudo python3 -m venv venv
-source venv/bin/activate
-
 sudo apt-get update
 echo "installing python and pip"
 sudo apt-get install -y python3 python3-pip
