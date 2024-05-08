@@ -49,7 +49,7 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://unix:/var/www/project/myapp.sock;
+        proxy_pass http://unix:/var/www/diploma/myapp.sock;
     }
 }
 EOF'
