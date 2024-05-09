@@ -119,9 +119,9 @@ def update_expense_data(expense, name, income, expense_value, date):
     expense.save()
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/login/')  # Ensures that only authenticated users can access the view
 def financial_statistics(request):
-    expenses = Expense.objects.all()
+    expenses = Expense.objects.filter(user=request.user)  # Filters expenses for the current user
     total_income = sum(expense.income for expense in expenses)
     total_expenses = sum(expense.expenses for expense in expenses)
     remaining_finance = total_income - total_expenses
@@ -138,6 +138,7 @@ def financial_statistics(request):
     }
 
     return render(request, 'expense/financial_statistics.html', context)
+
 
 
 def diagrams(request):
@@ -167,7 +168,7 @@ def diagrams(request):
     return render(request, 'expense/diagrams.html', context)
 
 
-@login_required(login_url='/login/')
+@login_required(login_url='/login/')  # Ensure user is authenticated
 def goals(request):
     if request.method == 'POST':
         form = SavingsGoalForm(request.POST)
@@ -177,18 +178,19 @@ def goals(request):
             return redirect('goals')
     else:
         form = SavingsGoalForm()
-    
+
+    # Filter savings goals for the current user
     savings_goals = SavingsGoal.objects.filter(user=request.user)
-    
+
     delete_goal_form = DeleteGoalForm()
     if 'delete_goal' in request.POST:
         goal_id = request.POST.get('delete_goal')
-        goal = get_object_or_404(SavingsGoal, id=goal_id)
+        goal = get_object_or_404(SavingsGoal, id=goal_id, user=request.user)
         goal.delete()
         return redirect('goals')
 
-    return render(request, 'expense/goals.html', {'form': form, 'savings_goals': savings_goals, 'delete_goal_form': delete_goal_form})
-
+    return render(request, 'expense/goals.html',
+                  {'form': form, 'savings_goals': savings_goals, 'delete_goal_form': delete_goal_form})
 
 def delete_goal(request, goal_id):
     goal = get_object_or_404(SavingsGoal, id=goal_id)
