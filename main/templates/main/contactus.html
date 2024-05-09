@@ -6,6 +6,52 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; 
+  font-weight: bold;
+  color: #333;
+}
+input:focus,
+textarea:focus {
+  border: 1px solid rgb(17, 237, 79);
+}
+.bg-image{
+  background-image: url("https://sun9-33.userapi.com/impg/3H3kV17eXqtt5IFsQS6FMdaQp7lwQjqX5R63Jg/edCW6vxKRD4.jpg?size=2560x1493&quality=95&sign=38928bc0aeb9e2abd9f10de599c9c2c3&type=album");
+  background-size:cover;
+  background-position:center center;
+  height: 100vh;
+  position:fixed;
+  left:0;
+  right:0;
+  z-index:-1;
+}
+.head {
+  background: rgb(30, 166, 69);
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.head h1,
+p {
+  text-align: center;
+  color: white;
+}
+button {
+  outline: none;
+  background: rgb(30, 166, 69);
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+</style>
     <div class = "bg-image"></div>
     <form>
 

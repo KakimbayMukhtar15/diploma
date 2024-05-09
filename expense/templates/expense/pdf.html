@@ -1,101 +1,103 @@
-
+{% extends 'main/header.html' %}
 
 {% block content %}
 <style>
-.box {
-  background-image: url("https://wallpaperaccess.com/full/1549170.png");
-  background-size:cover;
-  background-position:center center;
-  height:100vh;
-  position:fixed;
-  left:0;
-  right:0;
-  z-index:-1;
- 
-}
-  .container  {
-    
-            max-width: 900px;
-            margin: 30px auto;
-            
-        }
+    body {
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-position: center center;
+        height: -50vh;
+        box-sizing: border-box;
+        background-image: url("https://sun9-35.userapi.com/impg/dkEqxvHa3VWP0Pw0Y00q3iCSQuEjkhN05By_4Q/xKyY9OtsYCo.jpg?size=2560x1706&quality=95&sign=7131de088391d43ca4dcd06be94df8a3&type=album");
+    }
 
-        .expense-container {
-            padding: 20px;
-            border: 1px solid #000;
-            border-radius: 5px;
-            background-color: #fff;
-            margin-top: 30px;
-        }
+    .container {
+        max-width: 900px;
+        margin: 15px auto;
+    }
 
-        .expense-header {
-            text-align: center;
-        }
+    .expense-container {
+        padding: 20px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        background-color: #fff;
+        margin-top: 30px;
+    }
 
-        .expense-title {
-            font-size: 24px;
-            color: #000; 
-            margin-top: 20px;
-        }
+    .expense-header {
+        text-align: center;
+    }
 
-        .expense-table {
-            width: 100%;
-            margin-top: 20px;
-            border-collapse: collapse;
-        }
+    .expense-title {
+        font-size: 24px;
+        color: #000;
+        margin-top: 20px;
+    }
 
-        .expense-table th,
-        .expense-table td {
-            border: 1px solid #9f1c1c;
-            padding: 12px;
-            text-align: left;
-            color: #000; 
-        }
+    .expense-table {
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
 
-        .expense-total {
-            font-size: 20px;
-            font-weight: bold;
-            color: #000000;
-            margin-top: 20px;
-        }
+    .expense-table th,
+    .expense-table td {
+        border: 1px solid #9f1c1c;
+        padding: 12px;
+        text-align: left;
+        color: #000;
+    }
 
-        .expense-footer {
-            margin-top: 20px;
-            font-size: 16px;
-            color: #2b50b7;
-        }
+    .expense-total {
+        font-size: 20px;
+        font-weight: bold;
+        color: #000000;
+        margin-top: 20px;
+    }
 
-        .btn-print {
-            margin-left: 48%;
-            margin-top: 2%;
-        }
+    .expense-footer {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #2b50b7;
+    }
 
-        img.expense-img {
-            max-width: 50%;
-            height: auto;
-        }
+    .btn-print {
+        margin-left: 48%;
+        margin-top: 2%;
+    }
 
-        #date {
-            margin-left: 120px;
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            text-align: center;
-            text-decoration: none;
-            border: 2px solid #077bf8; 
-            color: #000000;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        .btn:hover {
-            background-color: black ; 
-        }
-        
-  
+    img.expense-img {
+        max-width: 50%;
+        height: auto;
+    }
+
+    #date {
+        margin-left: 120px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        text-align: center;
+        text-decoration: none;
+        border: 2px solid #077bf8;
+        color: #fff;
+        background-color: #077bf8;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
 </style>
+
 <div class="box">
 </div>
 <div class="container mt-5">

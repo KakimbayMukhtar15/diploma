@@ -6,6 +6,39 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    body {
+            height:100vh;
+            font-family: Arial, sans-serif; 
+            font-weight: bold;
+            color: #333;
+            background-image: url("https://sun9-9.userapi.com/impg/VrMYlL9OlQ_lysxWuP7WEgDHzcqb2grtdA2q-w/1UWbHLrbElI.jpg?size=2560x1463&quality=95&sign=121752bf96c84baef08a1b4ce94ec01f&type=album");
+            background-size:cover;
+            background-position:center center;
+            
+        }
+    canvas {
+
+    max-width: 100%;
+    height: auto;
+  
+}
+.container.mt-5 {
+    background-color: #fff; 
+    padding: 20px; 
+    font-weight: bold;
+    color: #333;
+}
+#myChart {
+    color: #333; 
+    font-family: Arial, sans-serif; 
+}
+
+#myChart .chartjs-text {
+    font-weight: bold; 
+}
+
+</style>
 <div class="container mt-5">
     <h2 class="text-center mb-4">Diagrams</h2>
     <div class="row">
@@ -18,7 +51,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Получаем данные из контекста
+       
         var labels = {{ chart_labels|safe }};
         var dataIncome = {{ chart_income|safe }};
         var dataExpenses = {{ chart_expenses|safe }};

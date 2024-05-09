@@ -7,11 +7,16 @@
     <style>
         body {
             height:100vh;
-            font-family: Arial, sans-serif; 
+            font-family: "Poppins", sans-serif;
+            font-weight: bold;
+            color: #333;
             margin: 0;
             padding: 0;
+            background-size:cover;
+            background-position:center center;
+            height: 100vh;
             box-sizing: border-box;
-            background-image: url("https://img2.goodfon.com/original/2048x1197/0/d8/tekstura-material-linii-belyy-2809.jpg");
+            background-image: url("https://sun9-9.userapi.com/impg/VrMYlL9OlQ_lysxWuP7WEgDHzcqb2grtdA2q-w/1UWbHLrbElI.jpg?size=2560x1463&quality=95&sign=121752bf96c84baef08a1b4ce94ec01f&type=album");
         }
 
         .container1 {
@@ -27,6 +32,7 @@
             padding: 10px;
             border: 1px solid #ccc;
             text-align: center;
+            background-color: #ffffffd0;
         }
 
         .mini-title {
@@ -46,6 +52,7 @@
             height: 200px;
             object-fit: cover;
             border: none;
+           
         }
 
         .btn {
@@ -69,28 +76,29 @@
     <div class="mini-container">
         <h2 class="mini-title">Finance</h2>
         <p class="mini-description">We can control our finances here</p>
-        <img src="{% static 'expense/img/finance.webp' %}" alt="Percentage Image" class="mini-page">
+        <img src="https://sun9-29.userapi.com/impg/FXQfqoQp125QnHOeYXHzi_-9II6PGe_nvpjBfg/boWqGPPg-jg.jpg?size=600x600&quality=95&sign=c188a07506f01f98cb7be05dfb6791c8&type=album" alt="Percentage Image" class="mini-page">
         <a href="{% url 'pdf' %}" class="btn">View Full Page</a>
     </div>
 
+
     <div class="mini-container">
         <h2 class="mini-title">Statistics</h2>
-        <p class="mini-description">View  statistics</p>
-        <img src="{% static 'expense/img/precent.png' %}" alt="Percentage Image" class="mini-page">
+        <p class="mini-description">View statistics</p>
+        <img src="https://sun9-8.userapi.com/impg/NZUYjDbyrlFWfXfRqBmJzpt7Yfnce3CyIApKGA/IKVIuxBXp5s.jpg?size=225x225&quality=95&sign=cbc1480aae5668738406b9174b871297&type=album" alt="Percentage Image" class="mini-page">
         <a href="{% url 'financial_statistics' %}" class="btn">View Full Page</a>
     </div>
 
     <div class="mini-container">
         <h2 class="mini-title">Diagram</h2>
         <p class="mini-description">Add something here</p>
-        <img src="{% static 'expense/img/statistics.png' %}" alt="Statistics Image" class="mini-page">
+        <img src="https://sun9-58.userapi.com/impg/1xs-M2Mj1U4LN7qRTf7MSpr6PVJn2hCaZsL7AQ/GYH8chNzxKs.jpg?size=350x300&quality=95&sign=044790d8338952da04d9e65c3f01cdb6&type=album" alt="Percentage Image" class="mini-page">
         <a href="{% url 'diagrams' %}" class="btn">View Full Page</a>
     </div>
 
     <div class="mini-container">
-        <h2 class="mini-title">Goals </h2>
+        <h2 class="mini-title">Goals</h2>
         <p class="mini-description">Set financial improvement goals</p>
-        <img src="{% static 'expense/img/goals.png' %}" alt="Goals Image" class="mini-page">
+        <img src="https://sun9-29.userapi.com/impg/SI4bPTbolRTLBbNSxt3B8D-75BClsvy6cuRSJQ/pmCGkm1Ft5I.jpg?size=300x168&quality=95&sign=b6d2243f97d4b90a7f6721940e98af71&type=album" alt="Percentage Image" class="mini-page">
         <a href="{% url 'goals' %}" class="btn">View Full Page</a>
     </div>
 </section>

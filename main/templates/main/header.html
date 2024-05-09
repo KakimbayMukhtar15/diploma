@@ -11,10 +11,18 @@
     
     {% endblock %}
     <style>
+      .container{
+        margin-top: 20px;
+      }
       form{
        margin:50px;
        height:100%;
+       font-weight: bold;
+       color: #333;
       }
+      .dropdown-menu img {
+    margin-top: 30px; /* Adjust the margin-top value as needed */
+}
     </style>
 </head>
 <body>
@@ -28,19 +36,20 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="{% url 'home' %}" class="nav-link px-2 link-secondary">Home</a></li>
+          <li><a href="{% url 'home' %}" class="nav-link px-2 link-body-emphasis">Home</a></li>
            
            <li><a href="{% url 'index' %}" class="nav-link px-2 link-body-emphasis">Calculate</a></li>
            <li><a href="{% url 'expenses' %}" class="nav-link px-2 link-body-emphasis">Track</a></li>
-          <li><a class="nav-link px-2 link-body-emphasis" href="{% url 'contactus' %}">Contact Us</a></li>
+         
           
           <li><a href="{% url 'diagrams' %}" class="nav-link px-2 link-body-emphasis">Diagram</a></li>
+          <li><a class="nav-link px-2 link-body-emphasis" href="{% url 'contactus' %}">Contact Us</a></li>
         </ul>
 
         <div class="dropdown text-end">
           <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'user/img/default.pg' %}{% endif %}" alt="mdo" width="32" height="32" class="rounded-circle ">          </a>
-          <ul class="dropdown-menu text-small" style="">
+            <img src="{% if user.profile.image %}{{ user.profile.image.url }}{% else %}{% static 'user/img/default.pg' %}{% endif %}" alt="mdo" width="44" height="44" margin-top="-30px" class="rounded-circle ">          </a>
+          <ul class="dropdown-menu text-small">
 
             <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
 
