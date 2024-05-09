@@ -1,4 +1,4 @@
-
+{% extends 'main/header.html' %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'expense/css/goals.css' %}">
@@ -10,17 +10,16 @@
         position: fixed;
     }
     .box {
-        background-image: url("https://sun9-56.userapi.com/impg/e0OfdDKqyll4qP4t3ThQ0TKKUodvZd_m2VAhzw/IVczD9UGKbc.jpg?size=760x861&quality=95&sign=fe3263fbd9819ffcdeb0f5984d5f98e3&type=album");
+        background-image: url("{% static 'expense/img/goal.jpg' %}");
         font-weight: bold;
       color: #333;
       background-size:cover;
       background-position:center center;
-      height:120vh;
-      position:fixed;
+      height:auto;
       left:0;
       right:0;
       z-index:-1;
-      margin: -25px;
+
       margin-top: 5px;
      
     }

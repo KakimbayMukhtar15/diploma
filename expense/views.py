@@ -74,33 +74,36 @@ def custom_logout(request):
 
 @login_required(login_url='/login/')
 def pdf(request):
+    # Get start_date and end_date from GET parameters
     start_date = request.GET.get('start_date')
     end_date = request.GET.get('end_date')
-    queryset = Expense.objects.all()
+
+    # Filter expenses for the current user
+    queryset = Expense.objects.filter(user=request.user)
+
+    # Apply date range filter if start_date and end_date are provided
     if start_date and end_date:
         start_date = datetime.strptime(start_date, '%Y-%m-%d').date()
         end_date = datetime.strptime(end_date, '%Y-%m-%d').date()
         queryset = queryset.filter(date__gte=start_date, date__lte=end_date)
-    for expense in queryset:
-        expense.total = expense.income - expense.expenses
 
+    # Calculate total income, total expenses, and remaining finance
     total_income = queryset.aggregate(total_income=Sum('income'))['total_income'] or 0
     total_expenses = queryset.aggregate(total_expenses=Sum('expenses'))['total_expenses'] or 0
     remaining_finance = total_income - total_expenses
-    username = request.user.username
 
+    # Pass data to the template
     context = {
         'expenses': queryset,
         'total_sum': total_income,
         'total_expenses': total_expenses,
         'remaining_finance': remaining_finance,
-        'username': username,
+        'username': request.user.username,
         'start_date': start_date,
         'end_date': end_date
     }
 
     return render(request, 'expense/pdf.html', context)
-
 
 def create_expense(salary, name, income, expense, date):
     Expense.objects.create(salary=salary, name=name, income=income, expenses=expense, date=date)
@@ -136,10 +139,7 @@ def financial_statistics(request):
 
 
 def diagrams(request):
-    # Filter expenses for the current user
-    expenses = Expense.objects.filter(user=request.user)
-
-    # Calculate total income and expenses for each date
+    expenses = Expense.objects.all()
     date_data = {}
     for expense in expenses:
         date_key = expense.date.strftime('%Y-%m-%d')
@@ -148,7 +148,6 @@ def diagrams(request):
         date_data[date_key]['income'] += expense.income
         date_data[date_key]['expenses'] += expense.expenses
 
-    # Prepare data for the chart
     chart_labels = []
     chart_income = []
     chart_expenses = []
@@ -157,7 +156,6 @@ def diagrams(request):
         chart_income.append(data['income'])
         chart_expenses.append(data['expenses'])
 
-    # Pass data to the template
     context = {
         'chart_labels': chart_labels,
         'chart_income': chart_income,
@@ -165,7 +163,6 @@ def diagrams(request):
     }
 
     return render(request, 'expense/diagrams.html', context)
-
 
 
 @login_required(login_url='/login/')
