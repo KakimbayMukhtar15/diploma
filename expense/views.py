@@ -80,6 +80,8 @@ def pdf(request):
 
     # Filter expenses for the current user
     queryset = Expense.objects.filter(user=request.user)
+    for expense in queryset:
+        expense.total = expense.income - expense.expenses
 
     # Apply date range filter if start_date and end_date are provided
     if start_date and end_date:
