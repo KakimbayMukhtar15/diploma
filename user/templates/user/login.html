@@ -26,11 +26,11 @@
 }
 
 .picture {
-    width: 1150;
+    width: 1000;
 }
 
 .picture img {
-    width: 1000;
+
     height: 100vh;
 }
 
@@ -46,13 +46,23 @@
 .btn {
     width: 220px; /* Set a fixed width for the buttons */
     margin-top: 10px;
-}
-    </style>
+    }
+        @media (max-width: 768px) {
+            .picture {
+                display: none; /* Hide the picture on mobile devices */
+            }
+
+            .wel {
+                max-width: none; /* Remove maximum width for the login form on mobile devices */
+            }
+        }
+        </style>
+
 </head>
 <body>
 <div class="welcome">
     <div class="picture">
-        <img src="{% static 'user/img/Wallet.png' %}" alt="" width="1150">
+        <img src="{% static 'user/img/Wallet.png' %}" alt="" width="960px" height="100%">
     </div>
 
     <div class="wel">
