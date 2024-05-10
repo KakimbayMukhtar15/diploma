@@ -141,8 +141,12 @@ def financial_statistics(request):
 
 
 
+@login_required(login_url='/login/')
 def diagrams(request):
-    expenses = Expense.objects.all()
+    # Filter expenses for the current user
+    expenses = Expense.objects.filter(user=request.user)
+
+    # Calculate total income and expenses for each date
     date_data = {}
     for expense in expenses:
         date_key = expense.date.strftime('%Y-%m-%d')
@@ -151,6 +155,7 @@ def diagrams(request):
         date_data[date_key]['income'] += expense.income
         date_data[date_key]['expenses'] += expense.expenses
 
+    # Prepare data for the chart
     chart_labels = []
     chart_income = []
     chart_expenses = []
@@ -159,6 +164,7 @@ def diagrams(request):
         chart_income.append(data['income'])
         chart_expenses.append(data['expenses'])
 
+    # Pass data to the template
     context = {
         'chart_labels': chart_labels,
         'chart_income': chart_income,
